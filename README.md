@@ -1,3 +1,22 @@
+> This is a [VapourNvim](https://github.com/VapourNvim/VapourNvim) configuration repository modified by Augists
+>
+> The original project seems to have been abandoned, and the functions in the plugin that are no longer in use have not been updated. The original repository has not been updated for 9 months, and the main contributor has quit maintaining it for academic reasons
+>
+> I have modified the functions of the null-ls plugin that have been abandoned, added copilot and other plugins, and modified the configuration a little bit according to my usage habits, you can continue to make changes in the `lua/Vapour/` directory
+>
+> Other issues and features will continue to be modified and updated as I use them
+
+
+> 这是一个由 Augists 修改过的 [VapourNvim](https://github.com/VapourNvim/VapourNvim) 配置仓库
+>
+> 原项目似乎已被放弃，对于插件中已经不再使用的函数并没有修改，截止目前原仓库已经9个月没有更新，主要贡献者也因学业原因退出维护
+>
+> 我修改了 null-ls 插件已经被放弃的函数，并添加了 copilot 等插件，并按照我的使用习惯修改了一点配置，你可以在 `lua/Vapour/` 目录下继续进行修改
+>
+> 其他问题和特性还会根据我的使用继续修改和更新
+
+---
+
 <div align="center">
   <h1 align="center">VapourNvim</h1> 
 	<a href="https://github.com/hackorum/VapourNvim/#features">✨ Features</a>
