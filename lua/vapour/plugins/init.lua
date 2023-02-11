@@ -48,9 +48,53 @@ return packer.startup(function(use)
   }
   use {
     'glepnir/dashboard-nvim',
-    disable = not is_enabled('dashboard'),
-    config = "require'dashboard-config'",
-    event = 'BufWinEnter'
+    -- event = 'BufWinEnter'
+    event = 'VimEnter',
+    -- disable = not is_enabled('dashboard'),
+    -- config = "require'dashboard-config'",
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper',
+        hide = {
+          statusline,
+          tabline,
+          winbar,
+        },
+        config = {
+          week_header = {
+           enable = true,
+          },
+          shortcut = {
+            {
+              desc = ' Files',
+              group = 'Label',
+              action = 'Telescope find_files',
+              key = 'f',
+            },
+            {
+              desc = ' Man Pages',
+              group = 'DashboardFiles',
+              action = 'Telescope man_pages',
+              key = 'd',
+            },
+            {
+              desc = ' Git',
+              group = 'Number',
+              action = 'Telescope git_status',
+              key = 'g',
+            },
+          },
+          footer = {
+            '',
+            '🚀 Powered by Augists ZDCZ',
+          },
+        },
+      }
+    end,
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
+  use {
+    'nvim-tree/nvim-web-devicons'
   }
   use {
     'lukas-reineke/indent-blankline.nvim',
@@ -119,6 +163,7 @@ return packer.startup(function(use)
     end,
     disable = not is_enabled('lsp')
   }
+  use {'github/copilot.vim', disable = not is_enabled('lsp'), after = 'nvim-cmp' }
   use { 'hrsh7th/cmp-nvim-lsp', disable = not is_enabled('lsp') }
   use { 'hrsh7th/cmp-buffer', after = "nvim-cmp", disable = not is_enabled('lsp') }
   use { 'hrsh7th/cmp-path', after = "nvim-cmp", disable = not is_enabled('lsp') }
@@ -174,6 +219,7 @@ return packer.startup(function(use)
     config = 'require("presence-config")',
     disable = not is_enabled('presence')
   }
+  use {'dhruvasagar/vim-table-mode'}
 
   for _, plugin in pairs(Vapour.plugins.user) do use(plugin) end
 end)

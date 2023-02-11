@@ -1,4 +1,4 @@
-local null_ls = Vapour.utils.plugins.require('null-ls')
+null_ls = Vapour.utils.plugins.require('null-ls')
 
 local formatting = null_ls.builtins.formatting
 
@@ -14,9 +14,9 @@ null_ls.setup({
     }), formatting.isort, formatting.codespell.with({filetypes = {'markdown'}})
   },
   on_attach = function(client)
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
       vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
-      if client.resolved_capabilities.document_highlight then
+      if client.server_capabilities.document_highlight then
         vim.api.nvim_exec([[
       augroup document_highlight
         autocmd! * <buffer>

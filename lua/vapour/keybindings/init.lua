@@ -1,8 +1,12 @@
 vim.g.mapleader = ' '
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true})
-vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true})
+-- vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true})
+-- vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true})
+vim.api.nvim_set_keymap('n', 'J', '5j', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'K', '5k', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('x', 'J', '5j', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('x', 'K', '5k', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<M-j>', ':resize -2<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<M-k>', ':resize +2<CR>', {noremap = true, silent = true})
@@ -25,6 +29,8 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silen
 
 if Vapour.plugins.nvim_comment.enabled then vim.api.nvim_set_keymap('v', '<leader>/', ':CommentToggle<cr>', {noremap = true, silent = true}) end
 
-vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
-vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
+-- vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
+-- vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 vim.cmd("vnoremap // y/\\V<C-R>=escape(@\",'/\')<CR><CR>")
+
+vim.cmd('vnoremap Y "+y')
