@@ -1,3 +1,7 @@
+!!!在新电脑上我已经改为使用 [LazyVim](https://www.lazyvim.org/)，并且非常推荐你使用!!!
+
+---
+
 > This is a [VapourNvim](https://github.com/VapourNvim/VapourNvim) configuration repository modified by Augists
 >
 > The original project seems to have been abandoned, and the functions in the plugin that are no longer in use have not been updated. The original repository has not been updated for 9 months, and the main contributor has quit maintaining it for academic reasons
